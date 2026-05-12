@@ -288,7 +288,15 @@ desitter:
 
       const response = await fetch(
 
-        `https://relativity-tensor-lab.onrender.com`,
+        `https://relativity-tensor-lab.onrender.com/${
+        selectedMetric === "christoffel"
+       ? "christoffel"
+       : selectedMetric === "riemann"
+       ? "riemann-second"
+       : selectedMetric === "ricci"
+       ? "ricci"
+       : "ricci-scalar"
+       }`,
 
         {
 
